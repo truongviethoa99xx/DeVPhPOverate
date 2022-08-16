@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(
+    ['namespace' => 'DataTable', 'as' => 'datatable.', 'middleware' => []],
+    function () {
+        Route::resource('/', 'DataTableController');
+        Route::get('datatable.data', ['as' => 'data', 'uses' => 'DataTableController@data']);
+    }
+);
