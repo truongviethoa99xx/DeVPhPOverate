@@ -5,27 +5,39 @@ $(function (){
 
 
 async function loadData() {
+    let action = ''
     table_payment_bill1 = await $('#table_data_payroll').DataTable({
         responsive: false,
         processing: true,
         serverSide: true,
         ordering: false,
-        dom:            "Bfrtip",
         autoWidth : false,
         scrollY:        "300px",
-        scrollCollapse: false,
-        lengthMenu: [[100], [100]],
-        pageLength: 100,
+        scrollX:        true,
+        scrollCollapse: true,
         buttons: [ 'colvis' ],
-        paging: false,
+        paging: true,
+        fixedHeader: true,
         fixedColumns: {
             leftColumns: 2,
             rightColumns: 2,
         },
         scrollX: true,
+        aLengthMenu: [[5, -1], [5, "Tất cả"]],
+        iDisplayLength: 5,
         language: {
             emptyTable: "<div class='empty-datatable-custom'><img src='../../../../files/assets/images/nodata-datatable2.png'></div>",
-            processing: "Đang tải"
+            processing: "Đang tải",
+            search:"",
+            searchPlaceholder: "Tìm kiếm",
+            lengthMenu: " _MENU_ ",
+            paginate: {
+                "first":      "Trang đầu",
+                "last":       "Trang cuối",
+                "next":       "Đi tới",
+                "previous":   "Quay lại"
+            },
+            info: " _END_ kết quả (tổng số _TOTAL_)",
         },
         ajax: {
             url: "datatable.data",

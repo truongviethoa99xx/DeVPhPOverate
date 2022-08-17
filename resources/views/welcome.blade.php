@@ -6,35 +6,24 @@
 
         <title>Laravel</title>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.0/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.dataTables.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-            th, td { white-space: nowrap; }
-            div.dataTables_wrapper {
-                width: 800px;
-                margin: 0 auto;
-            }
-
-            .DTFC_LeftBodyLiner {
-                overflow-x: hidden;
-            }
-        </style>
+        <link rel="stylesheet" href="{{asset('style.css')}}">
     </head>
     <body>
     <div class="page-wrapper">
         <div class="page-body">
             <div class="row d-flex justify-content-center align-item-center">
-                <div class="col-lg-5 card card-block">
+                <div class="col-lg-5">
                     <div class="form-group">
                         <input type="email" class="form-control" id="domain" aria-describedby="emailHelp" placeholder="Domain">
                     </div>
                 </div>
-                <div class="col-lg-5 card card-block">
+                <div class="col-lg-5">
                     <div class="form-group">
                         <input type="email" class="form-control" id="token" aria-describedby="emailHelp" placeholder="Token">
                     </div>
@@ -43,7 +32,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-            <div class="card card-block">
+            <div class="card card-block p-3">
                 <div class="table-responsive ">
                     <table class="table table-bordered" id="table_data_payroll">
                         <thead>
@@ -72,10 +61,10 @@
                                 <th class="text-center fix-size">Đánh giá món ăn (ĐGMĂ)</th>
                                 <th class="text-center fix-size">
                                     ĐGMĂ
-                                    <br>(bếp trưởng)</th>
+                                    </th>
                                 <th class="text-center fix-size">
                                     Hỗ trợ
-                                    <br>@lang('app.payroll-manage.note-chef')</th>
+                                   </th>
                                 <th class="text-center fix-size">Hỗ trợ</th>
                                 <th class="text-center fix-size background-color-highlight-table">
                                     Tổng tăng lương</th>
@@ -83,7 +72,7 @@
                                     Phạt trễq</th>
                                 <th class="text-center fix-size">
                                     Tiền phạt
-                                    <br>(k check-out)</th>
+                                   </th>
                                 <th class="text-center fix-size">
                                     Đồng phục	</th>
                                 <th class="text-center fix-size">
@@ -122,6 +111,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.6/js/dataTables.fixedColumns.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
     <script type="text/javascript" src="{{ asset('index.js')}}"></script>
 </html>
