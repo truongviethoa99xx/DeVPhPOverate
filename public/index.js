@@ -1,6 +1,10 @@
 let table_payment_bill;
 $(function (){
     loadData();
+
+    $('.dataTables_scrollBody').scroll(function (){
+        console.log($(this).scrollLeft());
+    })
 })
 
 
@@ -11,7 +15,7 @@ async function loadData() {
         processing: true,
         serverSide: true,
         ordering: false,
-        autoWidth : false,
+        autoWidth : true,
         scrollY:        "300px",
         scrollX:        true,
         scrollCollapse: true,
@@ -20,9 +24,10 @@ async function loadData() {
         fixedHeader: true,
         fixedColumns: {
             leftColumns: 2,
-            rightColumns: 2,
+            rightColumns: 1,
         },
-        scrollX: true,
+        
+
         aLengthMenu: [[5, -1], [5, "Tất cả"]],
         iDisplayLength: 5,
         language: {
@@ -43,50 +48,50 @@ async function loadData() {
             url: "datatable.data",
         },
         columns: [
-            {data: 'punish_not_checkout', name: 'DT_RowIndex', class: 'text-center', width: '5%'},
-            {data: "punish_not_checkout", name: "avatar", className: "text-center"},
-            {data: "punish_not_checkout", name: "em_name", className: "text-center"},
-            {data: "punish_not_checkout", name: "department", className: "text-center"},
-            {data: "punish_not_checkout", name: "branch_working_sesion_time", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_leave_day_with_salary", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_leave_day_without_salary", className: "text-center"},
-            {data: "punish_not_checkout", name: "kpi_score", className: "text-center"},
-            {data: "punish_not_checkout", name: "basic_salary_in_term", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_working_day", className: "text-center"},
-            {data: "punish_not_checkout", name: "salary_by_working_day", className: "text-center"},
+            {data: 'id', name: 'DT_RowIndex', class: 'text-center text-nowrap', width: '50%'},
+            {data: "employee.avatar", name: "avatar", className: "text-center text-nowrap" },
+            {data: "employee.name", name: "em_name", className: "text-center text-nowrap" },
+            {data: "employee.avatar", name: "department", className: "text-center text-nowrap" },
+            {data: "branch_working_sesion_time", name: "branch_working_sesion_time", className: "text-center text-nowrap" },
+            {data: "total_leave_day_with_salary", name: "total_leave_day_with_salary", className: "text-center text-nowrap" },
+            {data: "total_leave_day_without_salary", name: "total_leave_day_without_salary", className: "text-center text-nowrap" },
+            {data: "kpi_score", name: "kpi_score", className: "text-center text-nowrap" },
+            {data: "basic_salary_in_term", name: "basic_salary_in_term", className: "text-center text-nowrap" },
+            {data: "total_working_day", name: "total_working_day", className: "text-center text-nowrap" },
+            {data: "salary_by_working_day", name: "salary_by_working_day", className: "text-center text-nowrap" },
             {
-                data: "punish_not_checkout",
+                data: "target_point_bonus_salary_in_branch",
                 name: "target_point_bonus_salary_in_branch",
-                className: "text-center"
+                className: "text-center text-nowrap" 
             },
-            {data: "punish_not_checkout", name: "bonus_booking", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_customer_invited", className: "text-center"},
-            {data: "punish_not_checkout", name: "customer_invited_bonus", className: "text-center"},
-            {data: "punish_not_checkout", name: "other_bonus", className: "text-center"},
-            {data: "punish_not_checkout", name: "chef_bonus_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "master_chef_bonus_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "bonus_support_overtime_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_bonus", className: "text-center"},
-            {data: "punish_not_checkout", name: "punish_late_minute_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "punish_not_checkout_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "uniform_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "pre_paid_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "debt_amount", className: "text-center"},
-            {data: "punish_not_checkout", name: "other_punish", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_punish", className: "text-center"},
-            {data: "punish_not_checkout", name: "total_salary", className: "text-center"},
-            {data: "punish_not_checkout", name: "status_name_id", className: "text-center"},
-            {data: "punish_not_checkout", name: "employee_confirm", className: "text-center"},
-            {data: "punish_not_checkout", name: "manage_confirm", className: "text-center"},
-            {data: "punish_not_checkout", name: "general_manage_confirm", className: "text-center"},
-            {data: "punish_not_checkout", name: "owner_confirm", className: "text-center"},
-            {data: "punish_not_checkout", name: "treasurer_confirm", className: "text-center"},
+            {data: "bonus_booking", name: "bonus_booking", className: "text-center text-nowrap" },
+            {data: "total_customer_invited", name: "total_customer_invited", className: "text-center text-nowrap" },
+            {data: "customer_invited_bonus_amount", name: "customer_invited_bonus", className: "text-center text-nowrap" },
+            {data: "other_bonus", name: "other_bonus", className: "text-center text-nowrap" },
+            {data: "chef_bonus_amount", name: "chef_bonus_amount", className: "text-center text-nowrap" },
+            {data: "master_chef_bonus_amount", name: "master_chef_bonus_amount", className: "text-center text-nowrap" },
+            {data: "bonus_support_overtime_amount", name: "bonus_support_overtime_amount", className: "text-center text-nowrap" },
+            {data: "total_bonus", name: "total_bonus", className: "text-center text-nowrap" },
+            {data: "punish_late_minute_amount", name: "punish_late_minute_amount", className: "text-center text-nowrap" },
+            {data: "punish_not_checkout_amount", name: "punish_not_checkout_amount", className: "text-center text-nowrap" },
+            {data: "uniform_amount", name: "uniform_amount", className: "text-center text-nowrap" },
+            {data: "pre_paid_amount", name: "pre_paid_amount", className: "text-center text-nowrap" },
+            {data: "debt_amount", name: "debt_amount", className: "text-center text-nowrap" },
+            {data: "other_punish", name: "other_punish", className: "text-center text-nowrap" },
+            {data: "total_punish", name: "total_punish", className: "text-center text-nowrap" },
+            {data: "total_salary", name: "total_salary", className: "text-center text-nowrap" },
+            {data: "status_name", name: "status_name_id", className: "text-center text-nowrap" },
+            {data: "employee.normalize_name", name: "employee_confirm", className: "text-center text-nowrap" },
+            {data: "employee_role_name", name: "manage_confirm", className: "text-center text-nowrap" },
+            {data: "total_temporary_salary", name: "general_manage_confirm", className: "text-center text-nowrap" },
+            {data: "total_temporary_salary", name: "owner_confirm", className: "text-center text-nowrap" },
+            {data: "total_temporary_salary", name: "treasurer_confirm", className: "text-center text-nowrap" },
             {
                 data: "punish_not_checkout",
                 name: "total_temporary_salary",
-                className: "text-center background-color-highlight-table"
+                className: "text-center text-nowrap background-color-highlight-table"
             },
-            {data: "punish_not_checkout", name: "action", className: "text-center"},
+            {data: "total_temporary_salary", name: "action", className: "text-center text-nowrap", width: '54px'},
         ],
         "drawCallback": function (settings) {
             let response = settings.json;
@@ -102,9 +107,12 @@ async function loadData() {
             // $('#total-record-tab6-payment-bill').text(response.pay_auto);
         },
     });
+
+
     // $('#table-payment-bill1').on('draw.dt', function () {
     //     $('[data-toggle="tooltip"]').tooltip({
     //         trigger: 'hover'
     //     });
     // });
 }
+

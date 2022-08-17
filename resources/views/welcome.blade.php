@@ -37,55 +37,55 @@
                     <table class="table table-bordered" id="table_data_payroll">
                         <thead>
                             <tr>
-                                <th class="text-center fix-size">STT</th>
-                                <th class="text-center fix-size">HÌNH ẢNH</th>
-                                <th class="text-center fix-size">Tên nhân viên</th>
-                                <th class="text-center fix-size">Bộ phận</th>
-                                <th class="text-center fix-size">Ca làm việc</th>
-                                <th class="text-center fix-size">Nghỉ CP</th>
-                                <th class="text-center fix-size">Nghỉ KP</th>
-                                <th class="text-center fix-size">KPI</th>
-                                <th class="text-center fix-size">Lương CB</th>
-                                <th class="text-center fix-size">Ngày công
+                                <th class="text-center ">ID</th>
+                                <th class="text-center ">HÌNH ẢNH</th>
+                                <th class="text-center ">Tên nhân viên</th>
+                                <th class="text-center ">Bộ phận</th>
+                                <th class="text-center ">Ca làm việc</th>
+                                <th class="text-center ">Nghỉ CP</th>
+                                <th class="text-center ">Nghỉ KP</th>
+                                <th class="text-center ">KPI</th>
+                                <th class="text-center ">Lương CB</th>
+                                <th class="text-center ">Ngày công
                                     (NC)</th>
-                                <th class="text-center fix-size background-color-highlight-table">
+                                <th class="text-center  background-color-highlight-table">
                                     Thưởng ĐBH</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Thưởng Booking</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Số KH mới</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Thưởng KH mới</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Thưởng khác	</th>
-                                <th class="text-center fix-size">Đánh giá món ăn (ĐGMĂ)</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">Đánh giá món ăn (ĐGMĂ)</th>
+                                <th class="text-center ">
                                     ĐGMĂ
                                     </th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Hỗ trợ
                                    </th>
-                                <th class="text-center fix-size">Hỗ trợ</th>
-                                <th class="text-center fix-size background-color-highlight-table">
+                                <th class="text-center ">Hỗ trợ</th>
+                                <th class="text-center  background-color-highlight-table">
                                     Tổng tăng lương</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Phạt trễq</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Tiền phạt
                                    </th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Đồng phục	</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Tạm ứng	</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Nợ/Sai bill	</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Phạt khác	</th>
-                                <th class="text-center fix-size background-color-highlight-table">
+                                <th class="text-center  background-color-highlight-table">
                                     Tổng trừ lương</th>
-                                <th class="text-center fix-size background-color-highlight-table">
+                                <th class="text-center  background-color-highlight-table">
                                     Thực lãnh</th>
-                                <th class="text-center fix-size">
+                                <th class="text-center ">
                                     Trạng thái</th>
                                 <th class="text-center">
                                     Nhân viên	</th>
@@ -97,7 +97,7 @@
                                     Giám đốc</th>
                                 <th class="text-center">
                                     Thủ quỹ chi	</th>
-                                <th class="text-center fix-size background-color-highlight-table">
+                                <th class="text-center  background-color-highlight-table">
                                     Tổng lương</th>
                                 <th class="text-center"></th>
                             </tr>
