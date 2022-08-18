@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
@@ -12,26 +11,12 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.bootstrap.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.dataTables.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{asset('style.css')}}">
     </head>
     <body>
     <div class="page-wrapper">
         <div class="page-body">
-            <div class="row d-flex justify-content-center align-item-center">
-                <div class="col-lg-5">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="domain" aria-describedby="emailHelp" placeholder="Domain">
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="token" aria-describedby="emailHelp" placeholder="Token">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
             <div class="card card-block p-3">
                 <div class="table-responsive ">
                     <table class="table table-bordered" id="table_data_payroll">
