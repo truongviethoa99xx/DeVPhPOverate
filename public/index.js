@@ -1,8 +1,8 @@
 let table_payment_bill;
 $(function (){
     loadData();
-    $('.dataTables_scrollBody').scroll(function (){
-        console.log($(this).scrollLeft());
+    $(document).on('click','.btn-filter-data-table', function (){
+        $(this).parent().find('.list-filter-column-select').toggleClass('d-none');
     })
 })
 
@@ -102,10 +102,32 @@ async function loadData() {
                                                                                         </div></label>
                                                                                     </div>`);
             $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="filter-column-select">
-            <button type="submit" class="btn btn-filter-data-table"><i class="fas fa-filter"></i></button>
-            <ul class="list-filter-column-select">
+            <button type="submit" class="btn-filter-data-table"><i class="fas fa-filter"></i></button>
+            <ul class="list-filter-column-select d-none">
                 <li class="filter-column-select-item">
-                    <div class="checkbox-zoom zoom-primary">
+                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
+                        <label>
+                            <input type="checkbox" value="">
+                            <span class="cr">
+                                <i class="cr-icon fas fa-check txt-primary"></i>
+                            </span>
+                            <span>Primary</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="filter-column-select-item">
+                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
+                        <label>
+                            <input type="checkbox" value="">
+                            <span class="cr">
+                                <i class="cr-icon fas fa-check txt-primary"></i>
+                            </span>
+                            <span>Primary</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="filter-column-select-item">
+                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
                         <label>
                             <input type="checkbox" value="">
                             <span class="cr">
