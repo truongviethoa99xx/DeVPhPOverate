@@ -49,11 +49,11 @@ class DataTableController extends Controller
         $config['data']['total_record'] = count($config['data']['list']);
         foreach ($config['data']['list'] as $key => $data){
             $config['data']['list'][$key]['action'] = '<div class="btn-group btn-group-sm">
-                                <button type="button" class="data-table-btn-action btn-success waves-effect " onclick="openModalConvertSupplierRestaurant($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Danh sách NCC sổ tay"><i class="fas fa-check"></i></button>
-                                <button type="button" class="data-table-btn-action btn-warning waves-effect " onclick="openModalUpdateRestaurantManage($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Chỉnh sửa"><i class="fas fa-pen-fancy"></i></i></span></button>
-                                <button type="button" class="data-table-btn-action btn-primary waves-effect " onclick="openModalDetailRestaurantManage($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Chi tiết"><i class="fas fa-eye"></i></button>
-                                <button type="button" class="data-table-btn-action btn-danger waves-effect " onclick="openModalDetailRestaurantManage($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Xóa"><i class="fas fa-trash"></i></button>
-                            </div>';
+                                                            <div class="btn-action-icon" data-css="success"><i class="fas fa-check"></i></div>
+                                                            <div class="btn-action-icon" data-css="edit"><i class="fas fa-pen-fancy"></i></div>
+                                                            <div class="btn-action-icon" data-css="detail"><i class="fas fa-eye"></i></div>
+                                                            <div class="btn-action-icon" data-css="delete"><i class="fas fa-trash"></i></div>
+                                                        </div>';
         }
 
 

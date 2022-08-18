@@ -36,8 +36,8 @@ async function loadData() {
             paginate: {
                 "first":      "Trang đầu",
                 "last":       "Trang cuối",
-                "next":       "Đi tới",
-                "previous":   "Quay lại"
+                "next":       ">>",
+                "previous":   "<<"
             },
             info: " _END_ kết quả (tổng số _TOTAL_)",
         },
@@ -46,8 +46,8 @@ async function loadData() {
         },
         columns: [
             {data: 'id', name: 'DT_RowIndex', class: 'text-center text-nowrap'},
-            {data: "employee.avatar", name: "avatar", className: "text-center text-break", width: '50px' },
-            {data: "employee.name", name: "em_name", className: "text-center" },
+            {data: "employee.avatar", name: "avatar", className: "text-center text-break", width: '100px' },
+            {data: "employee.name", name: "em_name", className: "text-center text-break", width: '100px' },
             {data: "employee.avatar", name: "department", className: "text-center text-nowrap" },
             {data: "branch_working_sesion_time", name: "branch_working_sesion_time", className: "text-center text-nowrap" },
             {data: "total_leave_day_with_salary", name: "total_leave_day_with_salary", className: "text-center text-nowrap" },
@@ -93,15 +93,17 @@ async function loadData() {
         "drawCallback": function (settings) {
             let response = settings.json;
             console.log(response);
+            $('.paginate_button.previous').html('<i class="fas fa-backward"></i>');
+            $('.paginate_button.next').html('<i class="fas fa-forward"></i>');
             $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="m-auto class-date-from-to-validate d-inline-block">
                                                                                         <label class="input-group m-auto"><div class="input-group border-group">
                                                                                             <input type="text" id= data-validate="search" class="text-center input-date-time-picker date-from-validate" name="start" value="">
-                                                                                            <span class="label-date-time-picker">Đến</span>
+                                                                                            <span class="label-date-time-picker"><i class='bx bx-calendar' ></i></span>
                                                                                             <input type="text" id="" data-validate="search" class="text-center input-date-time-picker date-to-validate ml-0" name="end" value="">
                                                                                             <button id="" class="button-search-date-time-picker label-date-time-picker"><i class="fa fa-search p-r-0px"></i></button>
                                                                                         </div></label>
                                                                                     </div>`);
-            $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="filter-column-select">
+            $('#table_data_payroll' + '_wrapper .dataTables_filter').append(`<div class="filter-column-select">
             <button type="submit" class="btn-filter-data-table"><i class="fas fa-filter"></i></button>
             <ul class="list-filter-column-select d-none">
                 <li class="filter-column-select-item">
@@ -141,8 +143,9 @@ async function loadData() {
             </div>
             `);
                                                                                     
-            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table" style="--cir:#ff2972;"><i class="fas fa-plus mr-2"></i>Thêm cột</button>`);
-            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table" style="--cir:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);"><i class="fas fa-trash mr-2"></i>Xóa cột</button>`);
+            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-plus'></i></button>`);
+            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-trash'></i></button>`);
+            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-cog'></i></button>`);
             // $(".tooltip").tooltip("hide");
             // $('#total-tab1-payment-bill').text(response.total_amount);
             // $('#total-record-tab0-payment-bill').text(response.waiting_confirm);
@@ -159,4 +162,29 @@ async function loadData() {
 
 function fixedColumnDataTable(tableId, columnIndex) {
     tableId.find('tbody .text-center.dtfc-fixed-left:nth-child(' + columnIndex + ')').css('border-right', '2px solid #c2c2c2');
+}
+
+
+function testTooltip() {
+    var list = document.querySelector('section');
+    var index;
+    var css;
+    var index2;
+
+    list.addEventListener('mouseenter', function(ev) {
+    if (ev.target.tagName === 'SPAN') {
+        console.log(ev.target);
+        var rect = ev.target.getBoundingClientRect();
+        var top = rect.top;
+        var bottom = rect.bottom;
+        var left = rect.right;
+        
+        css = document.getElementById('css');
+        index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
+        index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
+    } else if (css && css.sheet) {
+    css.sheet.removeRule(index)
+    css.sheet.removeRule(index2)
+    }
+    }, true);4
 }
