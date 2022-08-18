@@ -26,8 +26,6 @@ async function loadData() {
             leftColumns: 2,
             rightColumns: 1,
         },
-        
-
         aLengthMenu: [[5, -1], [5, "Tất cả"]],
         iDisplayLength: 5,
         language: {
@@ -62,7 +60,7 @@ async function loadData() {
             {
                 data: "target_point_bonus_salary_in_branch",
                 name: "target_point_bonus_salary_in_branch",
-                className: "text-center text-nowrap" 
+                className: "text-center text-nowrap"
             },
             {data: "bonus_booking", name: "bonus_booking", className: "text-center text-nowrap" },
             {data: "total_customer_invited", name: "total_customer_invited", className: "text-center text-nowrap" },
@@ -91,11 +89,20 @@ async function loadData() {
                 name: "total_temporary_salary",
                 className: "text-center text-nowrap background-color-highlight-table"
             },
-            {data: "total_temporary_salary", name: "action", className: "text-center text-nowrap", width: '54px'},
+            {data: "action", name: "action", className: "text-center text-nowrap", width: '54px'},
         ],
         "drawCallback": function (settings) {
             let response = settings.json;
             console.log(response);
+            $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="m-auto class-date-from-to-validate" style="display:inline-block; width: max-content" data-format="">
+                                                                                        <label class="input-group m-auto"><div class="input-group border-group" style="padding:0; width: max-content">
+                                                                                            <input type="text" id= data-validate="search" class="input-sm form-control text-center input-datetimepicker p-1 custom-form-search class-date-from-validate" name="start" value="">
+                                                                                            <span class="input-group-addon custom-find">Đến</span>
+                                                                                            <input type="text" id="" data-validate="search" class="input-sm form-control text-center input-datetimepicker custom-form-search class-date-to-validate" name="end" value="">
+                                                                                            <button id="" class="input-group-addon cursor-pointer custom-button-search" style="outline:none;"><i class="fa fa-search p-r-0px"></i></button>
+                                                                                        </div></label>
+                                                                                    </div>`);
+
             // $(".tooltip").tooltip("hide");
             // $('#total-tab1-payment-bill').text(response.total_amount);
             // $('#total-record-tab0-payment-bill').text(response.waiting_confirm);
@@ -105,14 +112,11 @@ async function loadData() {
             // $('#total-record-tab4-payment-bill').text(response.pay_success);
             // $('#total-record-tab5-payment-bill').text(response.pay_cancel);
             // $('#total-record-tab6-payment-bill').text(response.pay_auto);
+
         },
     });
 
 
-    // $('#table-payment-bill1').on('draw.dt', function () {
-    //     $('[data-toggle="tooltip"]').tooltip({
-    //         trigger: 'hover'
-    //     });
-    // });
+
 }
 

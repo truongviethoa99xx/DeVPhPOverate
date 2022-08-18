@@ -47,6 +47,15 @@ class DataTableController extends Controller
         ]);
         $config = json_decode($response->getBody(), true);
         $config['data']['total_record'] = count($config['data']['list']);
+        foreach ($config['data']['list'] as $key => $data){
+            $config['data']['list'][$key]['action'] = '<div class="btn-group btn-group-sm">
+                                <button type="button" class="tabledit-edit-button btn btn-success waves-effect waves-light" onclick="openModalConvertSupplierRestaurant($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Danh sách NCC sổ tay"><span class="icofont icofont-page"></span></button>
+                                <button type="button" class="tabledit-edit-button btn btn-warning waves-effect waves-light" onclick="openModalUpdateRestaurantManage($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Chỉnh sửa"><span class="icofont icofont-ui-edit"></span></button>
+                                <button type="button" class="tabledit-edit-button btn btn-primary waves-effect waves-light" onclick="openModalDetailRestaurantManage($(this))" data-id="1" data-toggle="tooltip" data-placement="top" data-original-title="Chi tiết"><span class="icofont icofont-eye-alt"></span></button>
+                            </div>';
+        }
+
+
         $data_table = array(
             'draw' => $request->get('draw'),
             'recordsTotal' => $config['data']['total_record'],
