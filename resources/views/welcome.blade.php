@@ -25,8 +25,8 @@
                         <thead>
                             <tr>
                                 <th class="text-center ">ID</th>
-                                <th class="text-center ">HÌNH ẢNH</th>
                                 <th class="text-center ">Tên nhân viên</th>
+                                <th class="text-center ">Hình ảnh</th>
                                 <th class="text-center ">Bộ phận</th>
                                 <th class="text-center ">Ca làm việc</th>
                                 <th class="text-center ">Nghỉ CP</th>

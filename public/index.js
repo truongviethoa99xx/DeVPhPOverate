@@ -22,8 +22,8 @@ async function loadData() {
         paging: true,
         fixedHeader: true,
         fixedColumns: {
-            leftColumns: 2,
-            rightColumns: 1,
+            leftColumns: 3,
+            rightColumns: 3,
         },
         aLengthMenu: [[5, -1], [5, "Tất cả"]],
         iDisplayLength: 5,
@@ -46,9 +46,9 @@ async function loadData() {
         },
         columns: [
             {data: 'id', name: 'DT_RowIndex', class: 'text-center text-nowrap'},
-            {data: "employee.avatar", name: "avatar", className: "text-center text-break", width: '100px' },
-            {data: "employee.name", name: "em_name", className: "text-center text-break", width: '100px' },
-            {data: "employee.avatar", name: "department", className: "text-center text-nowrap" },
+            {data: "employee.name", name: "avatar", className: "text-center text-break", width: '100px' },
+            {data: "employee.avatar", name: "em_name", className: "text-center text-break", width: '100px' },
+            {data: "employee_role_name", name: "department", className: "text-center text-nowrap" },
             {data: "branch_working_sesion_time", name: "branch_working_sesion_time", className: "text-center text-nowrap" },
             {data: "total_leave_day_with_salary", name: "total_leave_day_with_salary", className: "text-center text-nowrap" },
             {data: "total_leave_day_without_salary", name: "total_leave_day_without_salary", className: "text-center text-nowrap" },

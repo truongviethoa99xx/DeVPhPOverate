@@ -11,7 +11,6 @@ use Yajra\DataTables\Facades\DataTables;
 
 class DataTableController extends Controller
 {
-    //
     public function index(){
         return view('welcome');
     }
@@ -46,6 +45,8 @@ class DataTableController extends Controller
             'json' => $data_req,
         ]);
         $config = json_decode($response->getBody(), true);
+        $domain = "http://172.16.2.255:1488";
+        $default = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Faenza-avatar-default-symbolic.svg/800px-Faenza-avatar-default-symbolic.svg.png";
         $config['data']['total_record'] = count($config['data']['list']);
         foreach ($config['data']['list'] as $key => $data){
             $config['data']['list'][$key]['action'] = '<div class="btn-group btn-group-sm">
@@ -54,6 +55,8 @@ class DataTableController extends Controller
                                                             <div class="btn-action-icon" data-css="detail"><i class="fas fa-eye"></i></div>
                                                             <div class="btn-action-icon" data-css="delete"><i class="fas fa-trash"></i></div>
                                                         </div>';
+            $config['data']['list'][$key]['employee']['avatar'] = '<img onerror="this.onerror=null; this.src=' . "'" . $default . "'" . '"  src="' . $domain . $data['employee']['avatar'] . '" alt="">';
+
         }
 
 
@@ -67,11 +70,6 @@ class DataTableController extends Controller
             'page' => ($request->get('start') + $request->get('length')) / $request->get('length'),
             'config' => $config
         );
-//        $confirm_treasurer = Config::get('constants.response_text.title-button.CONFIRM_TREASURER');
-//        $detail = Config::get('constants.response_text.title-button.DETAIL');
-//        $notify = Config::get('constants.response_text.title-button.NOTIFY');
-//        $send = Config::get('constants.response_text.title-button.SALARY_SEND');
-
         return json_encode($data_table);
     }
 
