@@ -50,10 +50,10 @@ class DataTableController extends Controller
         $config['data']['total_record'] = count($config['data']['list']);
         foreach ($config['data']['list'] as $key => $data){
             $config['data']['list'][$key]['action'] = '<div class="btn-group btn-group-sm">
-                                                            <div class="btn-action-icon" data-css="success"><i class="fas fa-check"></i></div>
-                                                            <div class="btn-action-icon" data-css="edit"><i class="fas fa-pen-fancy"></i></div>
-                                                            <div class="btn-action-icon" data-css="detail"><i class="fas fa-eye"></i></div>
-                                                            <div class="btn-action-icon" data-css="delete"><i class="fas fa-trash"></i></div>
+                                                            <div class="btn-action-icon" data-css="success" data-toggle="tooltip" title="Eliminar"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-check"></i></div>
+                                                            <div class="btn-action-icon" data-css="edit"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-pen-fancy"></i></div>
+                                                            <div class="btn-action-icon" data-css="detail"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-eye"></i></div>
+                                                            <div class="btn-action-icon" data-css="delete"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-trash"></i></div>
                                                         </div>';
             $config['data']['list'][$key]['employee']['avatar'] = '<img onerror="this.onerror=null; this.src=' . "'" . $default . "'" . '"  src="' . $domain . $data['employee']['avatar'] . '" alt="">';
 

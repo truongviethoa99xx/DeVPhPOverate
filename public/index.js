@@ -23,7 +23,7 @@ async function loadData() {
         fixedHeader: true,
         fixedColumns: {
             leftColumns: 3,
-            rightColumns: 3,
+            rightColumns: 1,
         },
         aLengthMenu: [[5, -1], [5, "Tất cả"]],
         iDisplayLength: 5,
@@ -39,7 +39,7 @@ async function loadData() {
                 "next":       ">>",
                 "previous":   "<<"
             },
-            info: " _END_ kết quả (tổng số _TOTAL_)",
+            info: "  tổng số _TOTAL_",
         },
         ajax: {
             url: "datatable.data",
@@ -146,6 +146,8 @@ async function loadData() {
             $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-plus'></i></button>`);
             $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-trash'></i></button>`);
             $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-cog'></i></button>`);
+
+            $('#table_data_payroll' + '_wrapper #table_data_payroll_info').prepend(`<label> <select name="table_data_payroll_length" aria-controls="table_data_payroll" class=""><option value="5">5</option><option value="-1">Tất cả</option></select> </label>`);
             // $(".tooltip").tooltip("hide");
             // $('#total-tab1-payment-bill').text(response.total_amount);
             // $('#total-record-tab0-payment-bill').text(response.waiting_confirm);
@@ -155,7 +157,6 @@ async function loadData() {
             // $('#total-record-tab4-payment-bill').text(response.pay_success);
             // $('#total-record-tab5-payment-bill').text(response.pay_cancel);
             // $('#total-record-tab6-payment-bill').text(response.pay_auto);
-
         },
     });
 }
@@ -165,26 +166,12 @@ function fixedColumnDataTable(tableId, columnIndex) {
 }
 
 
-function testTooltip() {
-    var list = document.querySelector('section');
-    var index;
-    var css;
-    var index2;
-
-    list.addEventListener('mouseenter', function(ev) {
-    if (ev.target.tagName === 'SPAN') {
-        console.log(ev.target);
-        var rect = ev.target.getBoundingClientRect();
-        var top = rect.top;
-        var bottom = rect.bottom;
-        var left = rect.right;
-        
-        css = document.getElementById('css');
-        index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
-        index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
-    } else if (css && css.sheet) {
-    css.sheet.removeRule(index)
-    css.sheet.removeRule(index2)
-    }
-    }, true);4
+function addRowDatatableTemplate(dt, data) {
+    data.DT_RowIndex = dt.data().count() + 1;
+    dt.row.add({
+        a : '<input >'
+    }).draw(false);
+    dt.page('last').draw(false);
+    $(dt.table().node()).parent().scrollTop($(dt.table().node()).parent().get(0).scrollHeight);
+    drawDataValidate($(dt.table().node()));
 }
