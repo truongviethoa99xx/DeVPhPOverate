@@ -14,7 +14,51 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
-        <link rel="stylesheet" href="{{asset('style.css')}}">    
+        <link rel="stylesheet" href="{{asset('style.css')}}">
+        <style>
+            .dt-button-collection .dt-button.buttons-columnVisibility {
+                background: none !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0.25em 1em !important;
+                margin: 0 !important;
+                text-align: left !important;
+            }
+            .dt-button-collection .buttons-columnVisibility:before,
+            .dt-button-collection .buttons-columnVisibility.active span:before {
+                display:block;
+                position:absolute;
+                top:1.2em;
+                left:0;
+                width:12px;
+                height:12px;
+                box-sizing:border-box;
+            }
+            .dt-button-collection .buttons-columnVisibility:before {
+                content:' ';
+                margin-top:-8px;
+                margin-left:10px;
+                border:1px solid black;
+                border-radius:3px;
+            }
+            .dt-button-collection .buttons-columnVisibility.active span:before {
+                font-family: 'Arial' !important;
+                content: '\2714';
+                margin-top: -9px;
+                margin-left: 13px;
+                text-align: center;
+                text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+            }
+            .dt-button-collection .buttons-columnVisibility span {
+                margin-left:17px;
+            }
+
+            .dt-button-collection {
+                top: 25px !important;
+                left: -115px !important;
+            }
+        </style>
 </head>
     <body>
     <div class="page-wrapper">
@@ -100,5 +144,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
     <script type="text/javascript" src="{{ asset('index.js')}}"></script>
 </html>

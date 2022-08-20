@@ -18,7 +18,6 @@ async function loadData() {
         scrollY:        "300px",
         scrollX:        true,
         scrollCollapse: true,
-        buttons: [ 'colvis' ],
         paging: true,
         fixedHeader: true,
         fixedColumns: {
@@ -90,64 +89,84 @@ async function loadData() {
             },
             {data: "action", name: "action", className: "text-center text-nowrap", width: '54px'},
         ],
-        "drawCallback": function (settings) {
+        // dom : '<<"toolbar">f<t><"col-sm-1 col-md-2 col-lg-3"lip>',
+        dom: "<'row'<'col-sm-1 col-md-2 col-lg-3'<'toolbar'>><'col-sm-11 col-md-10 col-lg-9 d-flex justify-content-end'f<'p-0'B>>>" +
+             "<'row'<'col-12'tr>>" +
+             "<'row'<'mt-3 p-0 d-flex col-2'l<'p-0'>i><'col-10'p>>",
+        buttons: [
+            {
+                text : '<i class="fas fa-filter"></i>',
+                extend: 'colvis',
+                fade: true,
+                className : 'btn-filter-data-table',
+                // collectionLayout: 'two-column'
+            }
+        ],
+        "initComplete": function (settings) {
             let response = settings.json;
             console.log(response);
             $('.paginate_button.previous').html('<i class="fas fa-backward"></i>');
             $('.paginate_button.next').html('<i class="fas fa-forward"></i>');
-            $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="m-auto class-date-from-to-validate d-inline-block">
-                                                                                        <label class="input-group m-auto"><div class="input-group border-group">
-                                                                                            <input type="text" id= data-validate="search" class="text-center input-date-time-picker date-from-validate" name="start" value="">
-                                                                                            <span class="label-date-time-picker"><i class='bx bx-calendar' ></i></span>
-                                                                                            <input type="text" id="" data-validate="search" class="text-center input-date-time-picker date-to-validate ml-0" name="end" value="">
-                                                                                            <button id="" class="button-search-date-time-picker label-date-time-picker"><i class="fa fa-search p-r-0px"></i></button>
-                                                                                        </div></label>
-                                                                                    </div>`);
-            $('#table_data_payroll' + '_wrapper .dataTables_filter').append(`<div class="filter-column-select">
-            <button type="submit" class="btn-filter-data-table"><i class="fas fa-filter"></i></button>
-            <ul class="list-filter-column-select d-none">
-                <li class="filter-column-select-item">
-                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
-                        <label>
-                            <input type="checkbox" value="">
-                            <span class="cr">
-                                <i class="cr-icon fas fa-check txt-primary"></i>
-                            </span>
-                            <span>Primary</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="filter-column-select-item">
-                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
-                        <label>
-                            <input type="checkbox" value="">
-                            <span class="cr">
-                                <i class="cr-icon fas fa-check txt-primary"></i>
-                            </span>
-                            <span>Primary</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="filter-column-select-item">
-                    <div class="checkbox-zoom zoom-primary p-1 m-0 ">
-                        <label>
-                            <input type="checkbox" value="">
-                            <span class="cr">
-                                <i class="cr-icon fas fa-check txt-primary"></i>
-                            </span>
-                            <span>Primary</span>
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            </div>
-            `);
-                                                                                    
-            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-plus'></i></button>`);
-            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-trash'></i></button>`);
-            $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-cog'></i></button>`);
+            // $('#table_data_payroll' + '_wrapper .dataTables_filter').prepend(`<div class="m-auto class-date-from-to-validate d-inline-block">
+            //                                                                             <label class="input-group m-auto"><div class="input-group border-group">
+            //                                                                                 <input type="text" id= data-validate="search" class="text-center input-date-time-picker date-from-validate" name="start" value="">
+            //                                                                                 <span class="label-date-time-picker"><i class='bx bx-calendar' ></i></span>
+            //                                                                                 <input type="text" id="" data-validate="search" class="text-center input-date-time-picker date-to-validate ml-0" name="end" value="">
+            //                                                                                 <button id="" class="button-search-date-time-picker label-date-time-picker"><i class="fa fa-search p-r-0px"></i></button>
+            //                                                                             </div></label>
+            //                                                                         </div>`);
+            // $('#table_data_payroll' + '_wrapper .dataTables_filter').append(`<div class="filter-column-select">
+            // <button type="submit" class="btn-filter-data-table"><i class="fas fa-filter"></i></button>
+            //     <ul class="list-filter-column-select d-none">
+            //     <li class="filter-column-select-item">
+            //         <div class="checkbox-zoom zoom-primary p-1 m-0 ">
+            //             <label>
+            //                 <input type="checkbox" value="">
+            //                 <span class="cr">
+            //                     <i class="cr-icon fas fa-check txt-primary"></i>
+            //                 </span>
+            //                 <span>Primary</span>
+            //             </label>
+            //         </div>
+            //     </li>
+            //     <li class="filter-column-select-item">
+            //         <div class="checkbox-zoom zoom-primary p-1 m-0 ">
+            //             <label>
+            //                 <input type="checkbox" value="">
+            //                 <span class="cr">
+            //                     <i class="cr-icon fas fa-check txt-primary"></i>
+            //                 </span>
+            //                 <span>Primary</span>
+            //             </label>
+            //         </div>
+            //     </li>
+            //     <li class="filter-column-select-item">
+            //         <div class="checkbox-zoom zoom-primary p-1 m-0 ">
+            //             <label>
+            //                 <input type="checkbox" value="">
+            //                 <span class="cr">
+            //                     <i class="cr-icon fas fa-check txt-primary"></i>
+            //                 </span>
+            //                 <span>Primary</span>
+            //             </label>
+            //         </div>
+            //     </li>
+            // </ul>
+            // </div>
+            // `);
+            $(".toolbar").html(
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-plus\'></i></button></label>'+
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-trash\'></i></button></label>'+
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-cog\'></i></button></label>' +
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-cog\'></i></button></label>'+
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-cog\'></i></button></label>'+
+                '<label><button type="submit" class="btn-tool-data-table"><i class=\'bx bx-cog\'></i></button></label>'
+            );
+            // $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-plus'></i></button>`);
+            // $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-trash'></i></button>`);
+            // $('#table_data_payroll' + '_wrapper .dataTables_length').append(`<button type="submit" class="btn-tool-data-table"><i class='bx bx-cog'></i></button>`);
 
-            $('#table_data_payroll' + '_wrapper #table_data_payroll_info').prepend(`<label> <select name="table_data_payroll_length" aria-controls="table_data_payroll" class=""><option value="5">5</option><option value="-1">Tất cả</option></select> </label>`);
+            // $('#table_data_payroll' + '_wrapper #table_data_payroll_info').prepend(`<label> <select name="table_data_payroll_length" aria-controls="table_data_payroll" class=""><option value="5">5</option><option value="-1">Tất cả</option></select> </label>`);
             // $(".tooltip").tooltip("hide");
             // $('#total-tab1-payment-bill').text(response.total_amount);
             // $('#total-record-tab0-payment-bill').text(response.waiting_confirm);
@@ -168,9 +187,7 @@ function fixedColumnDataTable(tableId, columnIndex) {
 
 function addRowDatatableTemplate(dt, data) {
     data.DT_RowIndex = dt.data().count() + 1;
-    dt.row.add({
-        a : '<input >'
-    }).draw(false);
+    dt.row.add(data).draw(false);
     dt.page('last').draw(false);
     $(dt.table().node()).parent().scrollTop($(dt.table().node()).parent().get(0).scrollHeight);
     drawDataValidate($(dt.table().node()));
