@@ -44,10 +44,13 @@ class DataTableController extends Controller
             'http_errors' => false,
             'json' => $data_req,
         ]);
+
+
         $config = json_decode($response->getBody(), true);
         $domain = "http://172.16.2.255:1488";
         $default = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Faenza-avatar-default-symbolic.svg/800px-Faenza-avatar-default-symbolic.svg.png";
         $config['data']['total_record'] = count($config['data']['list']);
+
         foreach ($config['data']['list'] as $key => $data){
             $config['data']['list'][$key]['action'] = '<div class="btn-group btn-group-sm">
                                                             <div class="btn-action-icon" data-css="success" data-toggle="tooltip" title="Eliminar"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-check"></i></div>

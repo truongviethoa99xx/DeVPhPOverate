@@ -18,5 +18,9 @@ Route::group(
     function () {
         Route::resource('/', 'DataTableController');
         Route::get('datatable.data', ['as' => 'data', 'uses' => 'DataTableController@data']);
+
+
+        Route::resource('/table', 'TableController');
+        Route::get('table.data', ['as' => 'table.data', 'uses' => 'TableController@data']);
     }
 );
