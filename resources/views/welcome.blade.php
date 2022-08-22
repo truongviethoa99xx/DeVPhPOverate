@@ -15,50 +15,6 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
         <link rel="stylesheet" href="{{asset('style.css')}}">
-        <style>
-            .dt-button-collection .dt-button.buttons-columnVisibility {
-                background: none !important;
-                background-color: transparent !important;
-                box-shadow: none !important;
-                border: none !important;
-                padding: 0.25em 1em !important;
-                margin: 0 !important;
-                text-align: left !important;
-            }
-            .dt-button-collection .buttons-columnVisibility:before,
-            .dt-button-collection .buttons-columnVisibility.active span:before {
-                display:block;
-                position:absolute;
-                top:1.2em;
-                left:0;
-                width:12px;
-                height:12px;
-                box-sizing:border-box;
-            }
-            .dt-button-collection .buttons-columnVisibility:before {
-                content:' ';
-                margin-top:-8px;
-                margin-left:10px;
-                border:1px solid black;
-                border-radius:3px;
-            }
-            .dt-button-collection .buttons-columnVisibility.active span:before {
-                font-family: 'Arial' !important;
-                content: '\2714';
-                margin-top: -9px;
-                margin-left: 13px;
-                text-align: center;
-                text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-            }
-            .dt-button-collection .buttons-columnVisibility span {
-                margin-left:17px;
-            }
-
-            .dt-button-collection {
-                top: 25px !important;
-                left: -115px !important;
-            }
-        </style>
 </head>
     <body>
     <div class="page-wrapper">
@@ -104,6 +60,71 @@
                                 <th class="text-center ">
                                     Tiền phạt
                                    </th>
+                                <th class="text-center ">
+                                    Đồng phục	</th>
+                                <th class="text-center ">
+                                    Tạm ứng	</th>
+                                <th class="text-center ">
+                                    Nợ/Sai bill	</th>
+                                <th class="text-center ">
+                                    Phạt khác	</th>
+                                <th class="text-center  background-color-highlight-table">
+                                    Tổng trừ lương</th>
+                                <th class="text-center  background-color-highlight-table">
+                                    Thực lãnh</th>
+                                <th class="text-center ">
+                                    Trạng thái</th>
+                                <th class="text-center">
+                                    Nhân viên	</th>
+                                <th class="text-center">
+                                    Quản lý	</th>
+                                <th class="text-center">
+                                    Ban QL	</th>
+                                <th class="text-center">
+                                    Giám đốc</th>
+                                <th class="text-center">
+                                    Thủ quỹ chi	</th>
+                                <th class="text-center  background-color-highlight-table">
+                                    Tổng lương</th>
+                                <th class="text-center"></th>
+                            </tr>
+                            <tr>
+                                <th class="text-center ">ID</th>
+                                <th class="text-center ">Tên nhân viên</th>
+                                <th class="text-center ">Hình ảnh</th>
+                                <th class="text-center ">Bộ phận</th>
+                                <th class="text-center ">Ca làm việc</th>
+                                <th class="text-center ">Nghỉ CP</th>
+                                <th class="text-center ">Nghỉ KP</th>
+                                <th class="text-center ">KPI</th>
+                                <th class="text-center ">Lương CB</th>
+                                <th class="text-center ">Ngày công
+                                    (NC)</th>
+                                <th class="text-center  background-color-highlight-table">
+                                    Thưởng ĐBH</th>
+                                <th class="text-center ">
+                                    Thưởng Booking</th>
+                                <th class="text-center ">
+                                    Số KH mới</th>
+                                <th class="text-center ">
+                                    Thưởng KH mới</th>
+                                <th class="text-center ">
+                                    Thưởng khác	</th>
+                                <th class="text-center ">Đánh giá món ăn (ĐGMĂ)</th>
+                                <th class="text-center ">
+                                    ĐGMĂ
+                                </th>
+                                <th class="text-center ">
+                                    Hỗ trợ
+                                </th>
+                                <th class="text-center ">Hỗ trợ</th>
+                                <th class="text-center  background-color-highlight-table">
+                                    Tổng tăng lương</th>
+                                <th class="text-center ">
+                                    Phạt trễq</th>
+                                <th class="text-center ">
+                                    Tiền phạt
+                                </th>
                                 <th class="text-center ">
                                     Đồng phục	</th>
                                 <th class="text-center ">

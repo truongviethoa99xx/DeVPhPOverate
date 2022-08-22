@@ -56,7 +56,6 @@ class DataTableController extends Controller
                                                             <div class="btn-action-icon" data-css="delete"><span class="tooltip" data-tooltip="Feel free to check the item 1"></span><i class="fas fa-trash"></i></div>
                                                         </div>';
             $config['data']['list'][$key]['employee']['avatar'] = '<img onerror="this.onerror=null; this.src=' . "'" . $default . "'" . '"  src="' . $domain . $data['employee']['avatar'] . '" alt="">';
-
         }
 
 
