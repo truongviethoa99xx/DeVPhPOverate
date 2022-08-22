@@ -97,8 +97,8 @@ async function loadData() {
         ],
         // dom : '<<"toolbar">f<t><"col-sm-1 col-md-2 col-lg-3"lip>',
         dom: "<'row'<'col-sm-1 col-md-2 col-lg-3'<'toolbar'>><'col-sm-11 col-md-10 col-lg-9 d-flex justify-content-end'f<'p-0'B>>>" +
-             "<'row'<'col-12'tr>>" +
-             "<'row'<'mt-3 p-0 d-flex col-2'l<'p-0'>i><'col-10'p>>",
+            "<'row'<'col-12'tr>>" +
+            "<'row'<'mt-3 p-0 d-flex col-2'l<'p-0'>i><'col-10'p>>",
         drawCallback: function () {
             var api = this.api();
             api.columns.adjust();
