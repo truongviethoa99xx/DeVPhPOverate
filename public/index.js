@@ -20,6 +20,7 @@ async function loadData() {
         scrollCollapse: true,
         paging: true,
         fixedHeader: true,
+        fixedColumns:   true,
         fixedColumns: {
             leftColumns: 3,
             rightColumns: 1,
@@ -207,6 +208,7 @@ async function loadData() {
             });
         },
     });
+    new $.fn.dataTable.FixedHeader(table_payment_bill1);
 }
 
 function fixedColumnDataTable(tableId, columnIndex) {
