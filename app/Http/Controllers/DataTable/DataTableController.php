@@ -11,6 +11,7 @@ use Yajra\DataTables\Facades\DataTables;
 
 class DataTableController extends Controller
 {
+
     public function index(){
         return view('welcome');
     }

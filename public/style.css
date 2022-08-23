@@ -20,6 +20,49 @@
     border-bottom: 1px solid #f9f9f9 !important;
 }
 
+/*div.dataTables_scrollBody thead th {*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*.dataTables_scrollHead{*/
+/*    overflow : visible !important;*/
+/*    width: 100%;*/
+/*}*/
+
+/*td.dtfc-fixed-left {*/
+/*    z-index:2*/
+/*}*/
+/*tr.even td {*/
+/*    background-color: #212529 !important;*/
+/*}*/
+/*table.dataTable th {*/
+/*    background-color: transparent !important;*/
+/*}*/
+/*div.dataTables_scrollBody {*/
+/*    border-left: 0px !important;*/
+/*}*/
+
+/*div.dtfc-right-top-blocker{*/
+/*    background-color: transparent !important;*/
+/*}*/
+
+/*.table-responsive {*/
+/*    overflow-x: hidden !important;*/
+/*    overflow-y: hidden !important;*/
+/*}*/
+
+/*.DTFC_ScrollWrapper {*/
+/*    height: fit-content !important;*/
+/*}*/
+
+/*.DTFC_LeftBodyLiner { overflow-x: hidden; }*/
+
+th, td { white-space: nowrap; }
+div.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 .dataTables_scrollBody::-webkit-scrollbar-track {
     background-color: #fff;

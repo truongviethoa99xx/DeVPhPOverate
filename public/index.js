@@ -8,7 +8,6 @@ $(function (){
 
 
 async function loadData() {
-    let action = ''
     table_payment_bill1 = await $('#table_data_payroll').DataTable({
         processing: true,
         serverSide: true,
@@ -17,21 +16,13 @@ async function loadData() {
         scrollCollapse: true,
         paging: true,
         fixedHeader: true,
-        fixedColumns:   true,
-        "paging":false,
-        "scrollY": 400,
-        "scrollX": true,
-        "info": false,
-        "searching": false,
-
-        fixedHeader: {
-            header: true,
-            footer: true
-        },
         fixedColumns: {
-            leftColumns: 3,
-            rightColumns: 1,
+            leftColumns: 2,
+            rightColumns: 2,
         },
+        deferRender : true,
+        scrollY:        400,
+        scrollX:        true,
         aLengthMenu: [[5, -1], [5, "Tất cả"]],
         iDisplayLength: 5,
         language: {
@@ -219,7 +210,6 @@ async function loadData() {
             });
         },
     });
-    new $.fn.dataTable.FixedHeader(table_payment_bill1);
 }
 
 function fixedColumnDataTable(tableId, columnIndex) {
