@@ -21,7 +21,7 @@ class DataTableController extends Controller
         $client = new Client([
             'headers' => [
                 'Accept' => 'application/json',
-                'Authorization' => 'Bearer 96674d66-4151-4056-9f51-dfbc76ec24cc',
+                'Authorization' => 'Bearer 9d218264-9b1a-43d9-98cc-a59ea3802ace',
                 'Content-Type' => 'application/json',
             ],
         ]);
@@ -45,7 +45,6 @@ class DataTableController extends Controller
             'http_errors' => false,
             'json' => $data_req,
         ]);
-
 
         $config = json_decode($response->getBody(), true);
         $domain = "http://172.16.2.255:1488";

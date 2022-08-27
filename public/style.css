@@ -20,6 +20,30 @@
     border-bottom: 1px solid #f9f9f9 !important;
 }
 
+div.dtfc-right-top-blocker,
+div.dtfc-left-top-blocker {
+    margin-top: 6px;
+    border-bottom: 0px solid #ddd !important;
+}
+
+table.dataTable.table-bordered.dtfc-has-left {
+    border-left: none;
+}
+
+div.dataTables_scroll.dtfc-has-left {
+    border-left: none;
+}
+table.table-bordered {
+    border-left: none;
+}
+
+div.dataTables_scrollBody {
+    border-left: 1px solid #ddd !important;
+}
+
+
+table.dataTable thead tr>.dtfc-fixed-left,table.dataTable thead tr>.dtfc-fixed-right{z-index:1;background-color:white}table.dataTable tbody tr>.dtfc-fixed-left,table.dataTable tbody tr>.dtfc-fixed-right{z-index:1;background-color:white}div.dtfc-left-top-blocker,div.dtfc-right-top-blocker{background-color:white}
+
 /*div.dataTables_scrollBody thead th {*/
 /*    vertical-align: top;*/
 /*}*/

@@ -59,7 +59,7 @@ async function loadData() {
                 name: "target_point_bonus_salary_in_branch",
                 className: "text-center text-nowrap"
             },
-            {data: "bonus_booking", name: "bonus_booking", className: "text-center text-nowrap" },
+            {data: "bonus_booking",name: "bonus_booking", className: "text-center text-nowrap" },
             {data: "total_customer_invited", name: "total_customer_invited", className: "text-center text-nowrap" },
             {data: "customer_invited_bonus_amount", name: "customer_invited_bonus", className: "text-center text-nowrap" },
             {data: "other_bonus", name: "other_bonus", className: "text-center text-nowrap" },
@@ -206,7 +206,6 @@ async function loadData() {
                     $(this).find('input').prop('checked', true);
                     column.visible(!column.visible());
                 }
-
             });
         },
     });
